@@ -53,7 +53,7 @@
   --terminal-text: #eceff4;
 }
 
-/* Base Resets */
+/* Base Resets & Strict No-Horizontal-Overflow */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -70,15 +70,24 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* Prevents page shift when scrollbar appears/disappears on refresh */
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 body {
-  position: relative;
-  overflow-x: hidden;
-  min-height: 100vh;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
   line-height: 1.6;
+  background-color: var(--paper);
+  color: var(--ink);
 }
+
 
 ::selection {
   background-color: var(--ember);
@@ -89,7 +98,12 @@ body {
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 999;
   opacity: 0.034;
@@ -100,9 +114,10 @@ body::after {
 .hero-orb {
   position: absolute;
   top: -120px;
-  right: -80px;
-  width: 620px;
-  height: 620px;
+  right: 0;
+  width: 580px;
+  max-width: 90vw;
+  height: 580px;
   border-radius: 50%;
   background: radial-gradient(circle, var(--ember-glow) 0%, transparent 68%);
   filter: blur(80px);
@@ -114,15 +129,18 @@ body::after {
 
 @keyframes orb-drift {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-40px, 30px, 0) scale(1.08); }
+  50% { transform: translate3d(-30px, 20px, 0) scale(1.06); }
 }
 
 /* Three.js Interactive 3D Canvas */
 #three-canvas {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
   opacity: 0.35;
@@ -157,48 +175,50 @@ body::after {
   left: 0;
   right: 0;
   width: 100vw;
-  width: 100%;
-  height: 80px;
-  padding: 0 clamp(24px, 4vw, 56px);
+  height: 72px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
   box-sizing: border-box;
   background-color: var(--paper-translucent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--hair);
   transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
+
 .navbar.scrolled {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.06);
 }
 
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  padding-left: clamp(16px, 3.5vw, 48px);
+  padding-right: 0;
 }
 
 .knit-nav-emblem {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: var(--ink);
   letter-spacing: -0.01em;
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 5px;
   white-space: nowrap;
 }
 
@@ -211,12 +231,13 @@ body::after {
   display: none;
   align-items: center;
   justify-content: center;
-  gap: clamp(16px, 2.2vw, 32px);
+  gap: clamp(18px, 2.5vw, 38px);
   flex: 1;
-  margin: 0 clamp(24px, 4vw, 56px);
+  margin: 0;
+  padding: 0;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .nav-links {
     display: flex;
   }
@@ -258,8 +279,10 @@ body::after {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-shrink: 0;
+  padding-right: clamp(16px, 3.5vw, 48px);
+  padding-left: 0;
 }
 
 .theme-toggle-btn {
@@ -328,7 +351,7 @@ body::after {
   z-index: 1001;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .menu-toggle {
     display: none;
   }
@@ -345,9 +368,12 @@ body::after {
 /* Fullscreen Mobile Menu Overlay */
 .fullscreen-menu {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--paper);
   z-index: 990;
   display: flex;
@@ -410,7 +436,7 @@ body::after {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 140px;
+  padding-top: 120px;
   padding-bottom: 60px;
   position: relative;
 }
@@ -1401,9 +1427,12 @@ body::after {
    ========================================================================== */
 .iframe-modal {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(13, 14, 17, 0.75);
   backdrop-filter: blur(12px);
   z-index: 2000;

@@ -1,14 +1,14 @@
 /* ==========================================================================
    Ishant Mohan — Systems & AI Engineer | Portfolio & Resume
    Theme: "Watch Me Become" · Authentic · Driven · High-Performance
-   Editorial Typography · Warm Paper & Ink Palette · Micro-Interactions
+   Editorial Typography · Warm Paper & Ink Palette · 100% Full-Width Navbar
    ========================================================================== */
 
 :root {
   --paper: #f7f4ee;
   --paper-warm: #efeae0;
   --paper-card: #ffffff;
-  --paper-translucent: rgba(247, 244, 238, 0.88);
+  --paper-translucent: rgba(247, 244, 238, 0.92);
   --ink: #181716;
   --ink-muted: #5c5850;
   --ink-subtle: #8a857a;
@@ -40,7 +40,7 @@
   --paper: #0d0e11;
   --paper-warm: #15161c;
   --paper-card: #191a22;
-  --paper-translucent: rgba(13, 14, 17, 0.88);
+  --paper-translucent: rgba(13, 14, 17, 0.92);
   --ink: #f5f4ef;
   --ink-muted: #aba599;
   --ink-subtle: #736e64;
@@ -69,12 +69,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  width: 100%;
 }
 
 body {
   position: relative;
   overflow-x: hidden;
   min-height: 100vh;
+  width: 100%;
   line-height: 1.6;
 }
 
@@ -146,25 +148,32 @@ body::after {
   color: var(--ember);
 }
 
-/* Navigation Bar */
+/* ==========================================================================
+   NAVIGATION BAR (100% FULL-WIDTH EDGE-TO-EDGE & SPACIOUS)
+   ========================================================================== */
 .navbar {
   position: fixed;
   top: 0;
-  inset-x: 0;
-  height: 76px;
-  padding: 0 36px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  width: 100%;
+  height: 80px;
+  padding: 0 clamp(24px, 4vw, 56px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
-  transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+  z-index: 1000;
+  box-sizing: border-box;
+  background-color: var(--paper-translucent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hair);
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .navbar.scrolled {
-  background-color: var(--paper-translucent);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--hair);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
 .logo-wrapper {
@@ -172,25 +181,25 @@ body::after {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  margin-right: clamp(48px, 6vw, 84px);
   flex-shrink: 0;
 }
 
 .knit-nav-emblem {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.7rem;
   color: var(--ink);
   letter-spacing: -0.01em;
   display: flex;
   align-items: baseline;
   gap: 6px;
+  white-space: nowrap;
 }
 
 .logo span {
@@ -201,7 +210,10 @@ body::after {
 .nav-links {
   display: none;
   align-items: center;
-  gap: clamp(16px, 1.8vw, 26px);
+  justify-content: center;
+  gap: clamp(16px, 2.2vw, 32px);
+  flex: 1;
+  margin: 0 clamp(24px, 4vw, 56px);
 }
 
 @media (min-width: 960px) {
@@ -211,11 +223,13 @@ body::after {
 }
 
 .nav-link {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--ink-muted);
   text-decoration: none;
   position: relative;
-  padding: 6px 0;
+  padding: 8px 0;
+  white-space: nowrap;
   transition: color 0.25s ease;
 }
 
@@ -245,14 +259,15 @@ body::after {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn {
   background: none;
   border: 1px solid var(--hair-strong);
   border-radius: var(--radius-full);
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -268,9 +283,9 @@ body::after {
 
 .btn-pill {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
-  padding: 8px 18px;
+  padding: 8px 20px;
   border-radius: var(--radius-full);
   border: 1px solid var(--ink);
   background: transparent;
@@ -280,6 +295,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
   transition: var(--transition-smooth);
 }
 
@@ -309,10 +325,10 @@ body::after {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 101;
+  z-index: 1001;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .menu-toggle {
     display: none;
   }
@@ -333,7 +349,7 @@ body::after {
   width: 100vw;
   height: 100vh;
   background-color: var(--paper);
-  z-index: 95;
+  z-index: 990;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -674,7 +690,7 @@ body::after {
   color: var(--ink);
 }
 
-/* Attitude Quotes Carousel / Grid */
+/* Attitude Quotes Grid */
 .attitude-section {
   padding: 60px 0 100px 0;
 }
@@ -1390,7 +1406,7 @@ body::after {
   height: 100vh;
   background-color: rgba(13, 14, 17, 0.75);
   backdrop-filter: blur(12px);
-  z-index: 200;
+  z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;

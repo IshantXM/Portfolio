@@ -266,11 +266,13 @@
   });
 
   // Attach terminal click previews
+  // GitHub blocks iframe embedding (X-Frame-Options: DENY), so open in new tab
   document.querySelectorAll('.terminal-block[data-url]').forEach((card) => {
     card.addEventListener('click', () => {
       const url = card.getAttribute('data-url');
-      const title = card.getAttribute('data-title') || 'Project Preview';
-      window.openModal(url, title);
+      if (url) {
+        window.open(url, '_blank', 'noreferrer');
+      }
     });
   });
 

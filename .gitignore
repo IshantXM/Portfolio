@@ -1,0 +1,11 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Optional build outputs
+node_modules/
+dist/
+.cache/

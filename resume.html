@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Ishant Mohan | Systems & AI Engineer</title>
+  <meta name="description" content="Official Curriculum Vitae of Ishant Mohan — Systems & AI Engineer, Undergraduate in Information Technology at Kamla Nehru Institute of Technology, Sultanpur." />
+  <meta name="author" content="Ishant Mohan" />
+
+  <link rel="icon" href="foot-logo.png" type="image/png" />
+
+  <!-- Google Fonts: Instrument Serif, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .resume-page-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px 24px;
+    }
+
+    .resume-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    @media print {
+      .resume-nav-bar {
+        display: none !important;
+      }
+      .resume-page-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient floating orb -->
+  <div class="hero-orb" style="top: -200px; right: -150px; opacity: 0.4;"></div>
+
+  <div class="resume-page-wrapper">
+    <!-- Top Action Bar -->
+    <header class="resume-nav-bar print-hide">
+      <a href="index.html" class="story-link font-mono-tag" style="display: flex; align-items: center; gap: 8px;">
+        <img src="foot-logo.png" alt="KNIT" style="width: 20px; height: 20px; object-fit: contain;" />
+        <span>← Return to Portfolio</span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="Official.pdf" target="_blank" class="btn-pill btn-ember">
+          Open Original PDF ↗
+        </a>
+
+        <a href="Official.pdf" download="Ishant_Mohan_Resume.pdf" class="btn-pill">
+          Download PDF ↓
+        </a>
+
+        <button class="btn-pill" onclick="window.print()">
+          Print 🖨
+        </button>
+      </div>
+    </header>
+
+    <!-- The Resume Document Sheet -->
+    <article class="resume-paper" style="margin-top: 0; box-shadow: 0 12px 50px rgba(0,0,0,0.06);">
+      <!-- Header -->
+      <header class="resume-header">
+        <div>
+          <h1 class="resume-name font-display">ISHANT MOHAN</h1>
+          <p class="resume-subtitle">Systems & AI Engineer · Sophomore @ KNIT Sultanpur</p>
+        </div>
+        <div class="resume-contact-bar">
+          <span>+91-9559632279</span>
+          <span>·</span>
+          <a href="mailto:ishantmohan045@gmail.com">ishantmohan045@gmail.com</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/ishant-mohan-858061387/" target="_blank">LinkedIn: Ishant Mohan</a>
+          <span>·</span>
+          <a href="https://github.com/IshantXM" target="_blank">GitHub: IshantXM</a>
+        </div>
+      </header>
+
+      <!-- Education -->
+      <div class="resume-block">
+        <h3 class="resume-block-title">Education</h3>
+        <div class="resume-edu-card">
+          <div>
+            <p class="resume-inst">Kamla Nehru Institute of Technology</p>
+            <p style="color: var(--ink-muted); font-size: 0.95rem;">B.Tech. in Information Technology (2nd Year) – <strong>CGPA: 7.53</strong></p>
+          </div>
+          <div style="text-align: right;">
+            <p class="resume-dates">Sultanpur, UP</p>
+            <p class="resume-dates">2025 – 2029</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="resume-block">
+        <h3 class="resume-block-title">Technical Skills</h3>
+        <div class="resume-skills-matrix">
+          <div class="skill-category">
+            <p class="skill-cat-title">Languages</p>
+            <p class="skill-items">C/C++ (C++20), Python, JavaScript, TypeScript, SQL</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-cat-title">Systems & Performance</p>
+            <p class="skill-items">Distributed Routing, Concurrency, State Machines, CMake, Google Test, REST/WebSocket APIs, Linux</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-cat-title">AI Engineering & Safety</p>
+            <p class="skill-items">LLM Evaluation, Failure Taxonomy, RAG, Vision-LLMs, OCR, FAISS, Prompt Engineering, Embeddings</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-cat-title">Backend & Infrastructure</p>
+            <p class="skill-items">FastAPI, PostgreSQL, Next.js, Node.js, Express, Docker, Redis, Git/GitHub</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="resume-block">
+        <h3 class="resume-block-title">Projects</h3>
+
+        <!-- Proj 1 -->
+        <div class="resume-project-item">
+          <div class="resume-proj-header">
+            <p class="resume-proj-title">Vectorized Black-Scholes Options Pricing Engine <span style="font-weight: 400; font-size: 0.88rem; color: var(--ink-muted);">| C++, AVX2, Python, CMake</span></p>
+            <p class="resume-proj-meta">2026 | <a href="https://github.com/IshantXM/black-scholes-option-pricing-engin.git" target="_blank">GitHub ↗</a></p>
+          </div>
+          <ul class="resume-bullet-list">
+            <li>Built a high-throughput Black-Scholes pricing engine using 256-bit AVX2/FMA, processing 4 double-precision contracts per instruction, increasing single-core throughput 3.6x from 17.7M to 63.6M options/sec (∼3.9 ns/option).</li>
+            <li>Engineered custom vectorized transcendental math kernels for exponential, logarithmic, and error-function evaluation using degree-10/16/24 minimax polynomial approximations, FMA, branchless range reduction, and IEEE-754 bit-level operations.</li>
+            <li>Validated pricing across 4M randomized market contracts, achieving 6.08 × 10⁻¹⁰ MAE and 4.05 × 10⁻⁹ maximum absolute error, reproducing analytical benchmark price of $10.450584.</li>
+          </ul>
+        </div>
+
+        <!-- Proj 2 -->
+        <div class="resume-project-item">
+          <div class="resume-proj-header">
+            <p class="resume-proj-title">Aegis – AI Agent Evaluation & Reliability Engine <span style="font-weight: 400; font-size: 0.88rem; color: var(--ink-muted);">| Team Project, OOCS IIIT Allahabad</span></p>
+            <p class="resume-proj-meta">2026 | <a href="https://github.com/IshantXM" target="_blank">GitHub ↗</a></p>
+          </div>
+          <ul class="resume-bullet-list">
+            <li>Architected an AI-agent evaluation platform benchmarking 5 reliability dimensions (correctness, safety, robustness, efficiency) from ingested execution traces.</li>
+            <li>Formulated a root-cause attribution engine mapping agent failures into 4 issue classes (tool loops, hallucinations, schema errors, goal drift) for diagnostic scoring.</li>
+            <li>Load-tested REST and WebSocket ingestion pipelines at 50 connections, sustaining 120 req/s at 495ms p99 latency with 0% error rate across 1,600+ traces.</li>
+          </ul>
+        </div>
+
+        <!-- Proj 3 -->
+        <div class="resume-project-item">
+          <div class="resume-proj-header">
+            <p class="resume-proj-title">PayGraph – Resilient Payment-Network Routing Engine <span style="font-weight: 400; font-size: 0.88rem; color: var(--ink-muted);">| C++20, CMake</span></p>
+            <p class="resume-proj-meta">2026 | <a href="https://github.com/IshantXM" target="_blank">GitHub ↗</a></p>
+          </div>
+          <ul class="resume-bullet-list">
+            <li>Built a payment-routing engine finding optimal transaction paths across simulated accounts using pathfinding algorithms (Dijkstra, BFS) with real-time route replanning.</li>
+            <li>Implemented transactional multi-hop routing guarantees ensuring atomic execution across steps to prevent funds from locking during intermediate node failures.</li>
+            <li>Benchmarked on a simulated network of 50,000 accounts and 400,000 connections, achieving ∼124 transactions/sec backed by 72 automated integration tests.</li>
+          </ul>
+        </div>
+
+        <!-- Proj 4 -->
+        <div class="resume-project-item">
+          <div class="resume-proj-header">
+            <p class="resume-proj-title">AI-Powered WhatsApp Notification Router <span style="font-weight: 400; font-size: 0.88rem; color: var(--ink-muted);">| HackerRank Orchestrate Hackathon</span></p>
+            <p class="resume-proj-meta">2026 | <a href="https://github.com/IshantXM" target="_blank">GitHub ↗</a></p>
+          </div>
+          <ul class="resume-bullet-list">
+            <li>Built a multimodal message-prioritization system combining Whisper transcription, OCR, GPT-5-mini reasoning, and rule-based safety detection to route messages (immediate, digest, mute).</li>
+            <li>Developed a hybrid evidence-retrieval engine using Gemini text embeddings and BM25 lexical search with caching and contextual boosts.</li>
+            <li>Achieved a 0.62 weighted F1-score across routing categories on a 110-message evaluation set with a 0% false-positive rate on scam detection (∼$0.11 / 1k msgs, 1.75s latency).</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Leadership & Achievements -->
+      <div class="resume-block">
+        <h3 class="resume-block-title">Leadership & Achievements</h3>
+        <ul class="resume-achieve-list">
+          <li>
+            <strong>Executive Member – AI/ML Domain, Programming and Tech Skills Club, KNIT Sultanpur:</strong> Facilitating AI/ML workshops, leading technical project discussions, and mentoring student developers.
+          </li>
+          <li>
+            <strong>Double Int Competitive Programming Contest:</strong> Best Performing First-Year Team.
+          </li>
+          <li>
+            <strong>HackerRank Orchestrate Global AI Competition:</strong> Ranked <strong>#1,108 / 1,983 globally</strong> among 22,000+ registrations in autonomous AI orchestration.
+          </li>
+          <li>
+            <strong>McKinsey Forward (2026):</strong> Selected and participant completing digital transformation & leadership tracks.
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <footer style="margin-top: 40px; text-align: center; color: var(--ink-muted); font-size: 0.82rem;" class="print-hide">
+      <p>© 2026 Ishant Mohan. “Watch me become.”</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -172,6 +172,8 @@ body::after {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  margin-right: clamp(48px, 6vw, 84px);
+  flex-shrink: 0;
 }
 
 .knit-nav-emblem {
@@ -199,10 +201,10 @@ body::after {
 .nav-links {
   display: none;
   align-items: center;
-  gap: 28px;
+  gap: clamp(16px, 1.8vw, 26px);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .nav-links {
     display: flex;
   }
